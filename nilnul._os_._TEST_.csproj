@@ -1,16 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\..\(packages)\MSTest.TestAdapter.2.2.10\build\net46\MSTest.TestAdapter.props" Condition="Exists('..\..\(packages)\MSTest.TestAdapter.2.2.10\build\net46\MSTest.TestAdapter.props')" />
+  <Import Project="..\..\(packages)\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\..\(packages)\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\..\(packages)\MSTest.TestAdapter.2.2.7\build\net45\MSTest.TestAdapter.props" Condition="Exists('..\..\(packages)\MSTest.TestAdapter.2.2.7\build\net45\MSTest.TestAdapter.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{479E1F89-5811-4683-B48F-C612DA8256F9}</ProjectGuid>
+    <ProjectGuid>{F8ABED2C-476C-416A-BDEF-1962A19C2FA8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>nilnul._os_._TEST_</RootNamespace>
-    <AssemblyName>nilnul._os_._TEST_</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <RootNamespace>_TEST__2</RootNamespace>
+    <AssemblyName>_TEST_%282</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
@@ -38,32 +39,196 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Symbol|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Symbol\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
-  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DotNetZip, Version=1.16.0.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\DotNetZip.1.16.0\lib\net40\DotNetZip.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\MSTest.TestFramework.2.2.10\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
+      <HintPath>..\..\(packages)\MSTest.TestFramework.2.2.7\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\MSTest.TestFramework.2.2.10\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
+      <HintPath>..\..\(packages)\MSTest.TestFramework.2.2.7\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul.collection_._discrete_._LIB_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\nilnul.collection_._discrete_._LIB_.1.1.220728.140313\lib\net48\nilnul.collection_._discrete_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul.num._integer_._LIB_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\nilnul.num._integer_._LIB_.1.1.220905.105721\lib\net481\nilnul.num._integer_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul.num._quotient_._LIB_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\nilnul.num._quotient_._LIB_.1.1.220926.131208\lib\net481\nilnul.num._quotient_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul.num._real_._LIB_, Version=2.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\nilnul.num._real_._LIB_.2.1.220818.53104\lib\net48\nilnul.num._real_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._bit_._LIB_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\nilnul._bit_._LIB_.1.1.221129.150825\lib\net481\nilnul._bit_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._character_._LIB_, Version=2.1.8343.38579, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\nilnul._character_._LIB_.2.1.221104.132532\lib\net481\nilnul._character_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._fs_._LIB_, Version=2.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\nilnul._fs_._LIB_.2.1.221209.141242\lib\net481\nilnul._fs_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._num_._LIB_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\nilnul._num_._LIB_.1.1.220826.15831\lib\net481\nilnul._num_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._num_._LINQ_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\nilnul._num_._LINQ_.1.1.220825.155237\lib\net481\nilnul._num_._LINQ_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._obj_._LIB_, Version=1.2.0.0, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\nilnul._obj_._LIB_.1.2.221126.72816\lib\net481\nilnul._obj_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._rel_._LIB_, Version=1.2.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\nilnul._rel_._LIB_.1.2.220817.152548\lib\net48\nilnul._rel_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._set_._LIB_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\nilnul._set_._LIB_.1.1.220905.140119\lib\net481\nilnul._set_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._time_._LIB_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\nilnul._time_._LIB_.1.1.221120.114651\lib\net481\nilnul._time_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._txt_._LIB_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\nilnul._txt_._LIB_.1.1.221129.160511\lib\net481\nilnul._txt_._LIB_.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Linq.Expressions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\System.Linq.Expressions.4.3.0\lib\net463\System.Linq.Expressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\System.Text.Encodings.Web.7.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\System.Text.Json.7.0.0\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="_nilnul_._LIB_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\_nilnul_._LIB_.1.1.220819.143251\lib\net481\_nilnul_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="_nilnul_._LINQ_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\(packages)\_nilnul_._LINQ_.1.1.220819.143032\lib\net481\_nilnul_._LINQ_.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="app\data\address\UnitTest1.cs" />
+    <Compile Include="nilnul0\app\task\coninuation_\onCancelled\UnitTest1.cs" />
+    <Compile Include="nilnul0\app\task_\cancelled\onDefault\UnitTest1 - Copy.cs" />
+    <Compile Include="nilnul0\app\task_\cancelled\wait\UnitTest1 - Copy.cs" />
+    <Compile Include="nilnul0\app\task_\delay\awaited\UnitTest1.cs" />
+    <Compile Include="nilnul0\app\task_\delay_\cancel\continue\UnitTest1.cs" />
+    <Compile Include="nilnul0\app\task_\delay_\cancel\onCancel\UnitTest1.cs" />
+    <Compile Include="nilnul0\app\task_\delay_\cancel\onComplete\fail\UnitTest1.cs" />
+    <Compile Include="nilnul0\app\task_\delay_\cancel\onDefaulted\UnitTest1.cs" />
+    <Compile Include="nilnul0\app\task_\delay_\cancel\waited\UnitTest1.cs" />
+    <Compile Include="nilnul0\app\task_\delay_\cancel\xpnProp\UnitTest1.cs" />
+    <Compile Include="nilnul0\app\task_\delay_\complete\onCancel\UnitTest1 - Copy.cs" />
+    <Compile Include="nilnul0\app\task_\delay_\complete\onComplete\UnitTest1.cs" />
+    <Compile Include="nilnul0\app\task_\faulted\onCancel\UnitTest1 - Copy.cs" />
+    <Compile Include="nilnul0\app\task_\faulted\onComplete\UnitTest1.cs" />
+    <Compile Include="nilnul0\app\task_\faulted\onDefault\UnitTest1 - Copy.cs" />
+    <Compile Include="nilnul0\app\task_\faulted\onFaulted\UnitTest1 - Copy.cs" />
+    <Compile Include="nilnul0\app\task_\faulted\UnitTest1.cs" />
+    <Compile Include="nilnul0\app\task_\faulted\wait\UnitTest1 - Copy.cs" />
+    <Compile Include="nilnul0\app\task_\succed\onDefault\UnitTest1 - Copy.cs" />
+    <Compile Include="nilnul0\prog\prep_\shell_\win_\hid\proc_\started_\doodle_\loom_\exit_\Due0manual_loomAftLurk.cs" />
+    <Compile Include="nilnul0\prog\prep_\shell_\win_\hid\proc_\started_\doodle_\loom_\exit_\OnDue.cs" />
+    <Compile Include="nilnul0\prog\prep_\shell_\win_\hid\proc_\started_\doodle_\loom_\exit_\onDue\_CodX.cs" />
+    <Compile Include="nilnul0\prog\prep_\shell_\win_\hid\proc_\started_\doodle_\loom_\exit_\onDue\_Cod_loomAftLurkX.cs" />
+    <Compile Include="nilnul0\prog\prep_\shell_\win_\hid\proc_\started_\doodle_\loom_\exit_\OnDue_loomAftLurk.cs" />
+    <Compile Include="nilnul0\prog\prep_\shell_\win_\hid\proc_\started_\doodle_\loom_\exit_\throwKilling_\OnDue.cs" />
+    <Compile Include="nilnul0\prog\prep_\shell_\win_\hid\proc_\started_\doodle_\loom_\exit_\throwKilling_\OnDue0cancel.cs" />
+    <Compile Include="nilnul0\prog\prep_\shell_\win_\hid\proc_\started_\doodle_\loom_\exit_\throwKilling_\onDue\_CodX.cs" />
+    <Compile Include="nilnul0\prog\prep_\shell_\win_\hid\proc_\started_\doodle_\loom_\exit_\throwKilling_\OnDue_loomAftLurk.cs" />
+    <Compile Include="nilnul0\prog\prep_\shell_\win_\hid\proc_\started_\doodle_\loom_\exit_\throwQuitTimeout_\OnDue_loomAftLurk.cs" />
+    <Compile Include="nilnul0\prog\prep_\shell_\win_\hid\proc_\started_\doodle_\loom_\waited\cod\ofGit\noNorm\UnitTest1 - Copy.cs" />
+    <Compile Include="nilnul0\prog\prep_\shell_\win_\hid\proc_\started_\doodle_\loom_\waited\cod\ofGit\UnitTest1 - Copy.cs" />
+    <Compile Include="nilnul0\prog\prep_\shell_\win_\hid\proc_\started_\doodle_\loom_\waited\cod\UnitTest1.cs" />
+    <Compile Include="prog\prep_\shell_\win_\hid\proc_\started\uis\UnitTest1.cs" />
+    <Compile Include="prog\prep_\shell_\win_\hid\proc_\started_\doodle_\loom_\exit_\onDue\cod\lurkGtLife\UnitTest1.cs" />
+    <Compile Include="prog\prep_\shell_\win_\hid\proc_\started_\doodle_\loom_\exit_\onDue\cod\UnitTest1.cs" />
+    <Compile Include="prog\prep_\shell_\win_\hid\proc_\started_\doodle_\loom_\exit_\onDue\cod_\loomAftLurk_\git\UnitTest1 - Copy.cs" />
+    <Compile Include="prog\prep_\shell_\win_\hid\proc_\started_\doodle_\loom_\exit_\onDue\cod_\loomAftLurk_\UnitTest1.cs" />
+    <Compile Include="prog\prep_\shell_\win_\hid\proc_\started_\doodle_\loom_\exit_\throwKilling_\onDue\cod\lurkGtLife\UnitTest1.cs" />
+    <Compile Include="prog\prep_\shell_\win_\hid\proc_\started_\doodle_\loom_\exit_\throwKilling_\onDue\cod\uisShow\UnitTest1.cs" />
+    <Compile Include="prog\prep_\shell_\win_\hid\proc_\started_\doodle_\loom_\exit_\UnitTest1.cs" />
+    <Compile Include="prog\prep_\shell_\win_\hid\proc_\started_\quit_\onDue\cod\lurkGtLife\UnitTest1.cs" />
+    <Compile Include="prog\prep_\shell_\win_\hid\proc_\started_\quit_\onDue\cod\UnitTest1.cs" />
+    <Compile Include="prog\prep_\shell_\win_\hid\proc_\started_\UnitTest1.cs" />
+    <Compile Include="prog\prep_\shell_\win_\hid\proc_\started_\waited\cod\UnitTest1.cs" />
+    <Compile Include="prog\prep_\shell_\win_\min\proc_\started_\doodle_\loom_\quit_\onDue\cod\lurkGtLife\UnitTest1.cs" />
+    <Compile Include="prog\prep_\shell_\win_\min\proc_\started_\doodle_\loom_\quit_\onDue\cod\UnitTest1.cs" />
+    <Compile Include="prog\prep_\shell_\win_\min\proc_\started_\doodle_\loom_\quit_\soft_\onDue\cod\lurkGtLife\UnitTest1.cs" />
+    <Compile Include="prog\prep_\shell_\win_\min\proc_\started_\doodle_\loom_\quit_\soft_\onDue\cod\UnitTest1.cs" />
+    <Compile Include="prog\prep_\shell_\win_\min\proc_\started_\doodle_\loom_\waited\cod\UnitTest1.cs" />
+    <Compile Include="prog\run_\exit\cod\ofGit\noNorm\UnitTest1 - Copy.cs" />
+    <Compile Include="prog\run_\exit\cod\ofGit\UnitTest1 - Copy.cs" />
+    <Compile Include="prog_\Git.cs" />
+    <Compile Include="prog_\git\nulable\Fallback.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="nilnul0\app\task_\delay\status\" />
+    <Folder Include="nilnul0\app\task_\delay_\cancel\continue\NewFolder1\" />
+    <Folder Include="nilnul0\app\task_\delay_\complete\onComplete\fail\" />
+    <Folder Include="nilnul0\app\task_\faulted\onComplete\fail\" />
+    <Folder Include="nilnul0\app\task_\tended\" />
+    <Folder Include="prog\prep_\shell\hid\" />
+    <Folder Include="prog\prep_\shell_\win_\hid\proc_\started_\doodle_\loom_\delayed_\" />
+    <Folder Include="prog\prep_\shell_\win_\hid\proc_\started_\doodle_\loom_\exit_\onDue0cancel\" />
+    <Folder Include="prog\prep_\shell_\win_\hid\proc_\started_\doodle_\loom_\NewFolder1\" />
+    <Folder Include="prog\prep_\shell_\win_\hid\proc_\started_\doodle_\loom_\waited\" />
+    <Folder Include="prog\prep_\shell_\win_\hid\proc_\started_\due0manual_\loom_\exit\" />
+    <Folder Include="prog\prep_\shell_\win_\min\proc_\started_\doodle_\loom_\delayed_\" />
+    <Folder Include="prog\prep_\shell_\win_\min\proc_\started_\quit_\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\nilnul._win_\_LIB_\nilnul._win_._LIB_.csproj">
+      <Project>{7787d050-57cd-40fa-88fc-34f89c15ddbc}</Project>
+      <Name>nilnul._win_._LIB_</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\_LIB4FX_%28Git\nilnul._os_._LIB4FX_.csproj">
+      <Project>{8d53bd1e-8b00-448f-96df-70f531ccaadd}</Project>
+      <Name>nilnul._os_._LIB4FX_</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -71,8 +236,13 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\..\(packages)\MSTest.TestAdapter.2.2.10\build\net46\MSTest.TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\(packages)\MSTest.TestAdapter.2.2.10\build\net46\MSTest.TestAdapter.props'))" />
-    <Error Condition="!Exists('..\..\(packages)\MSTest.TestAdapter.2.2.10\build\net46\MSTest.TestAdapter.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\(packages)\MSTest.TestAdapter.2.2.10\build\net46\MSTest.TestAdapter.targets'))" />
+    <Error Condition="!Exists('..\..\(packages)\MSTest.TestAdapter.2.2.7\build\net45\MSTest.TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\(packages)\MSTest.TestAdapter.2.2.7\build\net45\MSTest.TestAdapter.props'))" />
+    <Error Condition="!Exists('..\..\(packages)\MSTest.TestAdapter.2.2.7\build\net45\MSTest.TestAdapter.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\(packages)\MSTest.TestAdapter.2.2.7\build\net45\MSTest.TestAdapter.targets'))" />
+    <Error Condition="!Exists('..\..\(packages)\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\(packages)\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\..\(packages)\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\(packages)\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\..\(packages)\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\(packages)\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
   </Target>
-  <Import Project="..\..\(packages)\MSTest.TestAdapter.2.2.10\build\net46\MSTest.TestAdapter.targets" Condition="Exists('..\..\(packages)\MSTest.TestAdapter.2.2.10\build\net46\MSTest.TestAdapter.targets')" />
+  <Import Project="..\..\(packages)\MSTest.TestAdapter.2.2.7\build\net45\MSTest.TestAdapter.targets" Condition="Exists('..\..\(packages)\MSTest.TestAdapter.2.2.7\build\net45\MSTest.TestAdapter.targets')" />
+  <Import Project="..\..\(packages)\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\..\(packages)\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\..\(packages)\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\(packages)\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
 </Project>
