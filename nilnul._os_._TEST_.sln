@@ -22,6 +22,7 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 		Hbue40|Any CPU = Hbue40|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Sym2nuget|Any CPU = Sym2nuget|Any CPU
 		Symbol|Any CPU = Symbol|Any CPU
 		Symbols4Debug|Any CPU = Symbols4Debug|Any CPU
 	EndGlobalSection
@@ -32,6 +33,7 @@ Global
 		{C6E3D88C-0815-4915-81E0-5C2CF2BE305B}.Hbue40|Any CPU.Build.0 = Release|Any CPU
 		{C6E3D88C-0815-4915-81E0-5C2CF2BE305B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6E3D88C-0815-4915-81E0-5C2CF2BE305B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6E3D88C-0815-4915-81E0-5C2CF2BE305B}.Sym2nuget|Any CPU.ActiveCfg = Symbol|Any CPU
 		{C6E3D88C-0815-4915-81E0-5C2CF2BE305B}.Symbol|Any CPU.ActiveCfg = Symbol|Any CPU
 		{C6E3D88C-0815-4915-81E0-5C2CF2BE305B}.Symbol|Any CPU.Build.0 = Symbol|Any CPU
 		{C6E3D88C-0815-4915-81E0-5C2CF2BE305B}.Symbols4Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -42,6 +44,7 @@ Global
 		{73DA4679-E1D8-4BA7-AA6B-D1E7F7BB1307}.Hbue40|Any CPU.Build.0 = Debug|Any CPU
 		{73DA4679-E1D8-4BA7-AA6B-D1E7F7BB1307}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73DA4679-E1D8-4BA7-AA6B-D1E7F7BB1307}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73DA4679-E1D8-4BA7-AA6B-D1E7F7BB1307}.Sym2nuget|Any CPU.ActiveCfg = Symbols4Debug|Any CPU
 		{73DA4679-E1D8-4BA7-AA6B-D1E7F7BB1307}.Symbol|Any CPU.ActiveCfg = Symbol|Any CPU
 		{73DA4679-E1D8-4BA7-AA6B-D1E7F7BB1307}.Symbol|Any CPU.Build.0 = Symbol|Any CPU
 		{73DA4679-E1D8-4BA7-AA6B-D1E7F7BB1307}.Symbols4Debug|Any CPU.ActiveCfg = Symbols4Debug|Any CPU
@@ -52,6 +55,8 @@ Global
 		{7787D050-57CD-40FA-88FC-34F89C15DDBC}.Hbue40|Any CPU.Build.0 = Hbue40|Any CPU
 		{7787D050-57CD-40FA-88FC-34F89C15DDBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7787D050-57CD-40FA-88FC-34F89C15DDBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7787D050-57CD-40FA-88FC-34F89C15DDBC}.Sym2nuget|Any CPU.ActiveCfg = Sym2nuget|Any CPU
+		{7787D050-57CD-40FA-88FC-34F89C15DDBC}.Sym2nuget|Any CPU.Build.0 = Sym2nuget|Any CPU
 		{7787D050-57CD-40FA-88FC-34F89C15DDBC}.Symbol|Any CPU.ActiveCfg = Symbol|Any CPU
 		{7787D050-57CD-40FA-88FC-34F89C15DDBC}.Symbol|Any CPU.Build.0 = Symbol|Any CPU
 		{7787D050-57CD-40FA-88FC-34F89C15DDBC}.Symbols4Debug|Any CPU.ActiveCfg = Symbols4Debug|Any CPU
@@ -62,6 +67,8 @@ Global
 		{8D53BD1E-8B00-448F-96DF-70F531CCAADD}.Hbue40|Any CPU.Build.0 = Debug|Any CPU
 		{8D53BD1E-8B00-448F-96DF-70F531CCAADD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D53BD1E-8B00-448F-96DF-70F531CCAADD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D53BD1E-8B00-448F-96DF-70F531CCAADD}.Sym2nuget|Any CPU.ActiveCfg = Sym2nuget|Any CPU
+		{8D53BD1E-8B00-448F-96DF-70F531CCAADD}.Sym2nuget|Any CPU.Build.0 = Sym2nuget|Any CPU
 		{8D53BD1E-8B00-448F-96DF-70F531CCAADD}.Symbol|Any CPU.ActiveCfg = Symbol|Any CPU
 		{8D53BD1E-8B00-448F-96DF-70F531CCAADD}.Symbol|Any CPU.Build.0 = Symbol|Any CPU
 		{8D53BD1E-8B00-448F-96DF-70F531CCAADD}.Symbols4Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -72,6 +79,8 @@ Global
 		{F8ABED2C-476C-416A-BDEF-1962A19C2FA8}.Hbue40|Any CPU.Build.0 = Debug|Any CPU
 		{F8ABED2C-476C-416A-BDEF-1962A19C2FA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8ABED2C-476C-416A-BDEF-1962A19C2FA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8ABED2C-476C-416A-BDEF-1962A19C2FA8}.Sym2nuget|Any CPU.ActiveCfg = Sym2nuget|Any CPU
+		{F8ABED2C-476C-416A-BDEF-1962A19C2FA8}.Sym2nuget|Any CPU.Build.0 = Sym2nuget|Any CPU
 		{F8ABED2C-476C-416A-BDEF-1962A19C2FA8}.Symbol|Any CPU.ActiveCfg = Debug|Any CPU
 		{F8ABED2C-476C-416A-BDEF-1962A19C2FA8}.Symbol|Any CPU.Build.0 = Debug|Any CPU
 		{F8ABED2C-476C-416A-BDEF-1962A19C2FA8}.Symbols4Debug|Any CPU.ActiveCfg = Debug|Any CPU

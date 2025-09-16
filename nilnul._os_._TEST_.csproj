@@ -1,8 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\..\(packages)\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\..\(packages)\EntityFramework.6.4.4\build\EntityFramework.props')" />
-  <Import Project="..\..\(packages)\MSTest.TestAdapter.2.2.7\build\net45\MSTest.TestAdapter.props" Condition="Exists('..\..\(packages)\MSTest.TestAdapter.2.2.7\build\net45\MSTest.TestAdapter.props')" />
+  <!--<Import Project="packages\MSTest.TestAdapter.3.0.2\build\net462\MSTest.TestAdapter.props" Condition="Exists('packages\MSTest.TestAdapter.3.0.2\build\net462\MSTest.TestAdapter.props')" />-->
+  <Import Project="..\..\.deps\MSTest.TestAdapter.3.6.0\build\net462\MSTest.TestAdapter.props" Condition="Exists('..\..\.deps\MSTest.TestAdapter.3.6.0\build\net462\MSTest.TestAdapter.props')" />
+  <Import Project="..\..\.deps\Microsoft.Testing.Extensions.Telemetry.1.4.0\build\netstandard2.0\Microsoft.Testing.Extensions.Telemetry.props" Condition="Exists('..\..\.deps\Microsoft.Testing.Extensions.Telemetry.1.4.0\build\netstandard2.0\Microsoft.Testing.Extensions.Telemetry.props')" />
+  <Import Project="..\..\.deps\Microsoft.Testing.Platform.MSBuild.1.4.0\build\netstandard2.0\Microsoft.Testing.Platform.MSBuild.props" Condition="Exists('..\..\.deps\Microsoft.Testing.Platform.MSBuild.1.4.0\build\netstandard2.0\Microsoft.Testing.Platform.MSBuild.props')" />
+  <Import Project="..\..\.deps\Microsoft.Testing.Platform.1.4.0\build\netstandard2.0\Microsoft.Testing.Platform.props" Condition="Exists('..\..\.deps\Microsoft.Testing.Platform.1.4.0\build\netstandard2.0\Microsoft.Testing.Platform.props')" />
+  <Import Project="..\..\.deps\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\..\.deps\EntityFramework.6.5.1\build\EntityFramework.props')" />
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <!--<Import Project="packages\MSTest.TestAdapter.2.2.7\build\net45\MSTest.TestAdapter.props" Condition="Exists('packages\MSTest.TestAdapter.2.2.7\build\net45\MSTest.TestAdapter.props')" />-->
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Deterministic>false</Deterministic>
+  </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -39,108 +48,174 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Sym2nuget|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Sym2nuget\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DotNetZip, Version=1.16.0.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\DotNetZip.1.16.0\lib\net40\DotNetZip.dll</HintPath>
+      <HintPath>packages\DotNetZip.1.16.0\lib\net40\DotNetZip.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\..\.deps\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\..\.deps\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.22.0.997, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\Microsoft.ApplicationInsights.2.22.0\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Testing.Extensions.Telemetry, Version=1.4.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\Microsoft.Testing.Extensions.Telemetry.1.4.0\lib\netstandard2.0\Microsoft.Testing.Extensions.Telemetry.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Testing.Extensions.TrxReport.Abstractions, Version=1.4.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\Microsoft.Testing.Extensions.TrxReport.Abstractions.1.4.0\lib\netstandard2.0\Microsoft.Testing.Extensions.TrxReport.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Testing.Extensions.VSTestBridge, Version=1.4.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\Microsoft.Testing.Extensions.VSTestBridge.1.4.0\lib\netstandard2.0\Microsoft.Testing.Extensions.VSTestBridge.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Testing.Platform, Version=1.4.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\Microsoft.Testing.Platform.1.4.0\lib\netstandard2.0\Microsoft.Testing.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Testing.Platform.MSBuild, Version=1.4.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\Microsoft.Testing.Platform.MSBuild.1.4.0\lib\netstandard2.0\Microsoft.Testing.Platform.MSBuild.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TestPlatform.CoreUtilities, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\Microsoft.TestPlatform.ObjectModel.17.11.1\lib\net462\Microsoft.TestPlatform.CoreUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TestPlatform.PlatformAbstractions, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\Microsoft.TestPlatform.ObjectModel.17.11.1\lib\net462\Microsoft.TestPlatform.PlatformAbstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.ObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\Microsoft.TestPlatform.ObjectModel.17.11.1\lib\net462\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\MSTest.TestFramework.2.2.7\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
+      <HintPath>..\..\.deps\MSTest.TestFramework.3.6.0\lib\net462\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\MSTest.TestFramework.2.2.7\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
+      <HintPath>..\..\.deps\MSTest.TestFramework.3.6.0\lib\net462\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\.deps\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="nilnul.collection_._discrete_._LIB_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\nilnul.collection_._discrete_._LIB_.1.1.220728.140313\lib\net48\nilnul.collection_._discrete_._LIB_.dll</HintPath>
+      <HintPath>..\..\.deps\nilnul.collection_._discrete_._LIB_.1.1.240820.180817\lib\net48\nilnul.collection_._discrete_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul.lang_._cognom_._LIB_, Version=2.0.0.0, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\nilnul.lang_._cognom_._LIB_.2.0.240820.191858\lib\net48\nilnul.lang_._cognom_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul.lang_._cot_._LIB4FX_, Version=1.0.0.0, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\nilnul.lang_._cot_._LIB4FX_.1.0.240820.181034\lib\net48\nilnul.lang_._cot_._LIB4FX_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul.lang_._cot_._LIB_, Version=2.0.0.0, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\nilnul.lang_._cot_._LIB_.2.0.240820.192426\lib\net48\nilnul.lang_._cot_._LIB_.dll</HintPath>
     </Reference>
     <Reference Include="nilnul.num._integer_._LIB_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\nilnul.num._integer_._LIB_.1.1.220905.105721\lib\net481\nilnul.num._integer_._LIB_.dll</HintPath>
+      <HintPath>..\..\.deps\nilnul.num._integer_._LIB_.1.1.240828.111913\lib\net48\nilnul.num._integer_._LIB_.dll</HintPath>
     </Reference>
     <Reference Include="nilnul.num._quotient_._LIB_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\nilnul.num._quotient_._LIB_.1.1.220926.131208\lib\net481\nilnul.num._quotient_._LIB_.dll</HintPath>
+      <HintPath>..\..\.deps\nilnul.num._quotient_._LIB_.1.1.240820.181307\lib\net48\nilnul.num._quotient_._LIB_.dll</HintPath>
     </Reference>
     <Reference Include="nilnul.num._real_._LIB_, Version=2.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\nilnul.num._real_._LIB_.2.1.220818.53104\lib\net48\nilnul.num._real_._LIB_.dll</HintPath>
+      <HintPath>..\..\.deps\nilnul.num._real_._LIB_.2.1.240907.121505\lib\net48\nilnul.num._real_._LIB_.dll</HintPath>
     </Reference>
     <Reference Include="nilnul._bit_._LIB_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\nilnul._bit_._LIB_.1.1.221129.150825\lib\net481\nilnul._bit_._LIB_.dll</HintPath>
+      <HintPath>..\..\.deps\nilnul._bit_._LIB_.1.1.240831.105350\lib\net48\nilnul._bit_._LIB_.dll</HintPath>
     </Reference>
-    <Reference Include="nilnul._character_._LIB_, Version=2.1.8343.38579, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\nilnul._character_._LIB_.2.1.221104.132532\lib\net481\nilnul._character_._LIB_.dll</HintPath>
+    <Reference Include="nilnul._character_._LIB_, Version=2.1.8387.39356, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\nilnul._character_._LIB_.2.1.240831.105202\lib\net48\nilnul._character_._LIB_.dll</HintPath>
     </Reference>
     <Reference Include="nilnul._fs_._LIB_, Version=2.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\nilnul._fs_._LIB_.2.1.221209.141242\lib\net481\nilnul._fs_._LIB_.dll</HintPath>
+      <HintPath>..\..\.deps\nilnul._fs_._LIB_.2.1.240902.165128\lib\net48\nilnul._fs_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._lang_._LIB_, Version=1.1.0.0, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\nilnul._lang_._LIB_.1.1.240910.31540\lib\net48\nilnul._lang_._LIB_.dll</HintPath>
     </Reference>
     <Reference Include="nilnul._num_._LIB_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\nilnul._num_._LIB_.1.1.220826.15831\lib\net481\nilnul._num_._LIB_.dll</HintPath>
+      <HintPath>..\..\.deps\nilnul._num_._LIB_.1.1.240820.180030\lib\net48\nilnul._num_._LIB_.dll</HintPath>
     </Reference>
     <Reference Include="nilnul._num_._LINQ_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\nilnul._num_._LINQ_.1.1.220825.155237\lib\net481\nilnul._num_._LINQ_.dll</HintPath>
+      <HintPath>..\..\.deps\nilnul._num_._LINQ_.1.1.240820.180032\lib\net48\nilnul._num_._LINQ_.dll</HintPath>
     </Reference>
     <Reference Include="nilnul._obj_._LIB_, Version=1.2.0.0, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\nilnul._obj_._LIB_.1.2.221126.72816\lib\net481\nilnul._obj_._LIB_.dll</HintPath>
+      <HintPath>..\..\.deps\nilnul._obj_._LIB_.1.2.240924.105449\lib\net48\nilnul._obj_._LIB_.dll</HintPath>
     </Reference>
     <Reference Include="nilnul._rel_._LIB_, Version=1.2.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\nilnul._rel_._LIB_.1.2.220817.152548\lib\net48\nilnul._rel_._LIB_.dll</HintPath>
+      <HintPath>..\..\.deps\nilnul._rel_._LIB_.1.2.240831.105626\lib\net48\nilnul._rel_._LIB_.dll</HintPath>
     </Reference>
     <Reference Include="nilnul._set_._LIB_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\nilnul._set_._LIB_.1.1.220905.140119\lib\net481\nilnul._set_._LIB_.dll</HintPath>
+      <HintPath>..\..\.deps\nilnul._set_._LIB_.1.1.240831.105511\lib\net48\nilnul._set_._LIB_.dll</HintPath>
     </Reference>
     <Reference Include="nilnul._time_._LIB_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\nilnul._time_._LIB_.1.1.221120.114651\lib\net481\nilnul._time_._LIB_.dll</HintPath>
+      <HintPath>..\..\.deps\nilnul._time_._LIB_.1.1.240902.183156\lib\net48\nilnul._time_._LIB_.dll</HintPath>
     </Reference>
     <Reference Include="nilnul._txt_._LIB_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\nilnul._txt_._LIB_.1.1.221129.160511\lib\net481\nilnul._txt_._LIB_.dll</HintPath>
+      <HintPath>..\..\.deps\nilnul._txt_._LIB_.1.1.240902.144719\lib\net48\nilnul._txt_._LIB_.dll</HintPath>
+    </Reference>
+    <Reference Include="nilnul._xml_._LIB_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\nilnul._xml_._LIB_.1.1.240820.172116\lib\net48\nilnul._xml_._LIB_.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\System.Collections.Immutable.1.7.1\lib\net461\System.Collections.Immutable.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\System.Diagnostics.DiagnosticSource.5.0.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
     <Reference Include="System.Linq.Expressions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\System.Linq.Expressions.4.3.0\lib\net463\System.Linq.Expressions.dll</HintPath>
+      <HintPath>packages\System.Linq.Expressions.4.3.0\lib\net463\System.Linq.Expressions.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
     </Reference>
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
+    <Reference Include="System.Reflection.Metadata, Version=1.4.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\System.Reflection.Metadata.1.8.1\lib\net461\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
-    <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\System.Text.Encodings.Web.7.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
     </Reference>
-    <Reference Include="System.Text.Json, Version=7.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\System.Text.Json.7.0.1\lib\net462\System.Text.Json.dll</HintPath>
+    <Reference Include="System.Text.Json, Version=8.0.0.4, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\.deps\System.Text.Json.8.0.4\lib\net462\System.Text.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml" />
     <Reference Include="_nilnul_._LIB_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\_nilnul_._LIB_.1.1.220819.143251\lib\net481\_nilnul_._LIB_.dll</HintPath>
+      <HintPath>..\..\.deps\_nilnul_._LIB_.1.1.240820.60235\lib\net48\_nilnul_._LIB_.dll</HintPath>
     </Reference>
     <Reference Include="_nilnul_._LINQ_, Version=1.1.0.1, Culture=neutral, PublicKeyToken=085f320e4a727230, processorArchitecture=MSIL">
-      <HintPath>..\..\(packages)\_nilnul_._LINQ_.1.1.220819.143032\lib\net481\_nilnul_._LINQ_.dll</HintPath>
+      <HintPath>..\..\.deps\_nilnul_._LINQ_.1.1.240820.60236\lib\net48\_nilnul_._LINQ_.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -246,13 +321,29 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\..\(packages)\MSTest.TestAdapter.2.2.7\build\net45\MSTest.TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\(packages)\MSTest.TestAdapter.2.2.7\build\net45\MSTest.TestAdapter.props'))" />
-    <Error Condition="!Exists('..\..\(packages)\MSTest.TestAdapter.2.2.7\build\net45\MSTest.TestAdapter.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\(packages)\MSTest.TestAdapter.2.2.7\build\net45\MSTest.TestAdapter.targets'))" />
-    <Error Condition="!Exists('..\..\(packages)\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\(packages)\EntityFramework.6.4.4\build\EntityFramework.props'))" />
-    <Error Condition="!Exists('..\..\(packages)\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\(packages)\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
-    <Error Condition="!Exists('..\..\(packages)\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\(packages)\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+    <Error Condition="!Exists('..\..\.deps\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\.deps\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\..\.deps\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\.deps\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\..\.deps\Microsoft.Testing.Platform.1.4.0\build\netstandard2.0\Microsoft.Testing.Platform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\.deps\Microsoft.Testing.Platform.1.4.0\build\netstandard2.0\Microsoft.Testing.Platform.props'))" />
+    <Error Condition="!Exists('..\..\.deps\Microsoft.Testing.Platform.MSBuild.1.4.0\build\netstandard2.0\Microsoft.Testing.Platform.MSBuild.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\.deps\Microsoft.Testing.Platform.MSBuild.1.4.0\build\netstandard2.0\Microsoft.Testing.Platform.MSBuild.props'))" />
+    <Error Condition="!Exists('..\..\.deps\Microsoft.Testing.Platform.MSBuild.1.4.0\build\netstandard2.0\Microsoft.Testing.Platform.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\.deps\Microsoft.Testing.Platform.MSBuild.1.4.0\build\netstandard2.0\Microsoft.Testing.Platform.MSBuild.targets'))" />
+    <Error Condition="!Exists('..\..\.deps\Microsoft.Testing.Extensions.Telemetry.1.4.0\build\netstandard2.0\Microsoft.Testing.Extensions.Telemetry.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\.deps\Microsoft.Testing.Extensions.Telemetry.1.4.0\build\netstandard2.0\Microsoft.Testing.Extensions.Telemetry.props'))" />
+    <Error Condition="!Exists('..\..\.deps\MSTest.TestAdapter.3.6.0\build\net462\MSTest.TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\.deps\MSTest.TestAdapter.3.6.0\build\net462\MSTest.TestAdapter.props'))" />
+    <Error Condition="!Exists('..\..\.deps\MSTest.TestAdapter.3.6.0\build\net462\MSTest.TestAdapter.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\.deps\MSTest.TestAdapter.3.6.0\build\net462\MSTest.TestAdapter.targets'))" />
+    <!--<Error Condition="!Exists('packages\MSTest.TestAdapter.2.2.7\build\net45\MSTest.TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\MSTest.TestAdapter.2.2.7\build\net45\MSTest.TestAdapter.props'))" />
+    <Error Condition="!Exists('packages\MSTest.TestAdapter.2.2.7\build\net45\MSTest.TestAdapter.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\MSTest.TestAdapter.2.2.7\build\net45\MSTest.TestAdapter.targets'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+    <Error Condition="!Exists('packages\MSTest.TestAdapter.3.0.2\build\net462\MSTest.TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\MSTest.TestAdapter.3.0.2\build\net462\MSTest.TestAdapter.props'))" />
+    <Error Condition="!Exists('packages\MSTest.TestAdapter.3.0.2\build\net462\MSTest.TestAdapter.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\MSTest.TestAdapter.3.0.2\build\net462\MSTest.TestAdapter.targets'))" />
+    <Error Condition="!Exists('..\..\.deps\MSTest.TestAdapter.3.1.1\build\net462\MSTest.TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\.deps\MSTest.TestAdapter.3.1.1\build\net462\MSTest.TestAdapter.props'))" />
+    <Error Condition="!Exists('..\..\.deps\MSTest.TestAdapter.3.1.1\build\net462\MSTest.TestAdapter.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\.deps\MSTest.TestAdapter.3.1.1\build\net462\MSTest.TestAdapter.targets'))" />-->
   </Target>
-  <Import Project="..\..\(packages)\MSTest.TestAdapter.2.2.7\build\net45\MSTest.TestAdapter.targets" Condition="Exists('..\..\(packages)\MSTest.TestAdapter.2.2.7\build\net45\MSTest.TestAdapter.targets')" />
-  <Import Project="..\..\(packages)\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\..\(packages)\EntityFramework.6.4.4\build\EntityFramework.targets')" />
-  <Import Project="..\..\(packages)\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\(packages)\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <!--<Import Project="packages\MSTest.TestAdapter.2.2.7\build\net45\MSTest.TestAdapter.targets" Condition="Exists('packages\MSTest.TestAdapter.2.2.7\build\net45\MSTest.TestAdapter.targets')" />-->
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\..\.deps\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\..\.deps\EntityFramework.6.5.1\build\EntityFramework.targets')" />
+  <Import Project="..\..\.deps\Microsoft.Testing.Platform.MSBuild.1.4.0\build\netstandard2.0\Microsoft.Testing.Platform.MSBuild.targets" Condition="Exists('..\..\.deps\Microsoft.Testing.Platform.MSBuild.1.4.0\build\netstandard2.0\Microsoft.Testing.Platform.MSBuild.targets')" />
+  <Import Project="..\..\.deps\MSTest.TestAdapter.3.6.0\build\net462\MSTest.TestAdapter.targets" Condition="Exists('..\..\.deps\MSTest.TestAdapter.3.6.0\build\net462\MSTest.TestAdapter.targets')" />
+  <!--<Import Project="packages\MSTest.TestAdapter.3.0.2\build\net462\MSTest.TestAdapter.targets" Condition="Exists('packages\MSTest.TestAdapter.3.0.2\build\net462\MSTest.TestAdapter.targets')" />-->
 </Project>
